@@ -1,3 +1,23 @@
+# BDD Shop v1
+
+## Setup
+
+Clone this project and run `yarn` or `npm install` to install all dependencies.
+
+## Run
+
+Execute `yarn test` or `npm test` to run the tests.
+
+Make sure that you execute all the tests.
+
+## How it was build
+
+There is a story about this repository in Medium:
+
+- [How to TDD with BDD-Gherkin in JavaScript](https://drpicox.medium.com/495b2b726cf)
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
