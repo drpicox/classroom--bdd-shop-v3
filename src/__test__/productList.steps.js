@@ -1,15 +1,16 @@
 // src/__test__/productList.steps.js
-import { render, screen } from "@testing-library/react";
-import { ProductList } from "../productList";
-
-let products;
-beforeEach(() => {
-  products = [];
-});
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
+import { AllProductList } from "../productList";
+import { products, addProduct } from "./mockServer";
 
 export const productListSteps = ({ given, when, then, pending }) => {
-  when("I list products", () => {
-    render(<ProductList products={products} />);
+  when("I list products", async () => {
+    render(<AllProductList products={products} />);
+    await waitForElementToBeRemoved(screen.getByText("Loading..."));
   });
 
   then(/^there should be (\d+) products$/, (count) => {
@@ -18,7 +19,7 @@ export const productListSteps = ({ given, when, then, pending }) => {
   });
 
   given(/^there is a product "(.*)"$/, (name) => {
-    products.push({ name });
+    addProduct({ name });
   });
 
   then(/^there should be the "(.*)" product$/, (name) => {
@@ -27,7 +28,7 @@ export const productListSteps = ({ given, when, then, pending }) => {
   });
 
   given(/^there is a product "(.*)" with price \$(\d+)$/, (name, price) => {
-    products.push({ name, price: +price });
+    addProduct({ name, price: +price });
   });
 
   then(
