@@ -1,4 +1,4 @@
-# BDD Shop v2
+# BDD Shop v3
 
 ## Setup
 
@@ -14,7 +14,7 @@ Make sure that you execute all the tests.
 
 There is a story about this repository in Medium:
 
-- [How to TDD with BDD-Gherkin 2: Fetching From Services in React](https://drpicox.medium.com/2383c2d39e12)
+- [How to TDD with BDD-Gherkin 3: Adding React-Redux handling](https://drpicox.medium.com/ab3e2f5564b1)
 
 ---
 

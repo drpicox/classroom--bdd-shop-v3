@@ -4,12 +4,13 @@ import {
   screen,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
+import { wrapApp } from "../app/wrapApp";
 import { AllProductList } from "../productList";
 import { products, addProduct } from "./mockServer";
 
 export const productListSteps = ({ given, when, then, pending }) => {
   when("I list products", async () => {
-    render(<AllProductList products={products} />);
+    render(wrapApp(<AllProductList products={products} />));
     await waitForElementToBeRemoved(screen.getByText("Loading..."));
   });
 
